@@ -1,4 +1,3 @@
-from pathlib import Path
 import os
 try:
     import cPickle as pickle
@@ -32,8 +31,7 @@ class PickleUtils:
         Returns:
             Return True if the file exists, otherwise false.
         """
-        my_pickle_file = Path(self.PICKLE_NAME)
-        if my_pickle_file.is_file():
+        if os.path.isfile(self.PICKLE_NAME):
             return True
         return False
 
