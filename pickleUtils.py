@@ -35,14 +35,6 @@ class PickleUtils:
             return True
         return False
 
-    def pickle_create_dir(self):
-        """
-        Create the directory for the file (not including the file itself.)
-        """
-        directory = os.path.dirname(self.PICKLE_NAME)
-        if not os.path.exists(directory):
-            os.makedirs(directory)
-
     def pickle_read(self):
         """
         Read objects from the file. Objects will be returned in a list.
@@ -73,7 +65,6 @@ class PickleUtils:
             examples:
                 ['test', {'a':1, 'b':2}]
         """
-        self.pickle_create_dir()
         with open(self.PICKLE_NAME, 'wb') as pf:
             for item in list_of_objects:
                 pickle.dump(item, pf)
