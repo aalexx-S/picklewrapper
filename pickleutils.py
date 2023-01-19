@@ -13,7 +13,6 @@ class PickleUtils:
     Attributes:
         PICKLE_NAME: the name of the file writing to and reading from.
     """
-    PICKLE_NAME = ""
 
     def __init__(self, filename):
         """
